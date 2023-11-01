@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="use_gui" value="true" />
+  <arg name="rvizconfig" default="$(find arm_description)/rviz/arm.rviz" />
+
+  <include file="$(find arm_description)/launch/arm_upload.launch"/>
+  
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" if="$(arg use_gui)" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+</launch> 
