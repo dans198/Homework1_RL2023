@@ -8,4 +8,4 @@ $ roslaunch arm_description display.launch
 $ roslaunch arm_gazebo arm_gazebo.launch
 
 //launch the controller node
-$rosrun arm_controller arm_controller_node
+$ rosrun arm_controller arm_controller_node
